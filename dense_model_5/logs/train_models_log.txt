@@ -1,0 +1,141 @@
+Using device: cpu
+Loaded 900 data points
+Joint angles shape: (900, 6)
+Joint torques shape: (900, 6)
+Delta XYZ shape: (900, 3)
+
+Joint Angles Statistics:
+Joint 1: Min = -3.1255, Max = 3.1320, Mean = -0.0201
+Joint 2: Min = -1.9785, Max = 1.9712, Mean = -0.0035
+Joint 3: Min = -2.5714, Max = 2.6046, Mean = 0.0831
+Joint 4: Min = -3.1275, Max = 3.1203, Mean = -0.0253
+Joint 5: Min = -2.4430, Max = 2.4704, Mean = 0.0253
+Joint 6: Min = -3.1329, Max = 3.1235, Mean = -0.1319
+
+Joint Torques Statistics:
+Torque 1: Min = -12.0937, Max = 13.1490, Mean = 0.2339
+Torque 2: Min = -140.0250, Max = 140.2919, Mean = -1.8084
+Torque 3: Min = -54.2620, Max = 53.8970, Mean = -1.9853
+Torque 4: Min = -10.7257, Max = 12.0049, Mean = 0.6904
+Torque 5: Min = -5.9562, Max = 6.2149, Mean = 0.1356
+Torque 6: Min = -2.5132, Max = 2.8268, Mean = 0.1668
+
+FK Error Statistics (meters):
+Delta X: Min = -0.01097954, Max = 0.01352684, Mean = 0.00018684
+Delta Y: Min = -0.01082828, Max = 0.01134697, Mean = 0.00000375
+Delta Z: Min = -0.01429689, Max = 0.01520985, Mean = -0.00004619
+
+XY Model - Training set size: 720, Test set size: 180
+Z Model - Training set size: 720, Test set size: 180
+
+XY Model architecture:
+XYErrorNet(
+  (model): Sequential(
+    (0): Linear(in_features=6, out_features=2000, bias=True)
+    (1): BatchNorm1d(2000, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.25, inplace=False)
+    (4): Linear(in_features=2000, out_features=1000, bias=True)
+    (5): BatchNorm1d(1000, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.25, inplace=False)
+    (8): Linear(in_features=1000, out_features=500, bias=True)
+    (9): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): ReLU()
+    (11): Dropout(p=0.25, inplace=False)
+    (12): Linear(in_features=500, out_features=2, bias=True)
+  )
+)
+
+Z Model architecture:
+ZErrorNet(
+  (model): Sequential(
+    (0): Linear(in_features=12, out_features=2000, bias=True)
+    (1): BatchNorm1d(2000, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.25, inplace=False)
+    (4): Linear(in_features=2000, out_features=1000, bias=True)
+    (5): BatchNorm1d(1000, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.25, inplace=False)
+    (8): Linear(in_features=1000, out_features=500, bias=True)
+    (9): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): ReLU()
+    (11): Dropout(p=0.25, inplace=False)
+    (12): Linear(in_features=500, out_features=1, bias=True)
+  )
+)
+
+XY Model parameters: 2,523,502
+Z Model parameters: 2,535,001
+
+=== Training XY Model ===
+[XY Model] Epoch [1/150], Train Loss: 0.30156517, Val Loss: 0.10233340, LR: 0.001
+[XY Model] Validation RMSE: 0.00758677 meters
+[XY Model] Epoch [10/150], Train Loss: 0.03419678, Val Loss: 0.01485469, LR: 0.001
+[XY Model] Validation RMSE: 0.00288441 meters
+[XY Model] Epoch [20/150], Train Loss: 0.01510415, Val Loss: 0.00746438, LR: 0.001
+[XY Model] Validation RMSE: 0.00199822 meters
+Epoch    24: reducing learning rate of group 0 to 5.0000e-04.
+[XY Model] Epoch [30/150], Train Loss: 0.01037444, Val Loss: 0.00468442, LR: 0.0005
+[XY Model] Validation RMSE: 0.00159069 meters
+[XY Model] Epoch [40/150], Train Loss: 0.00845335, Val Loss: 0.00534926, LR: 0.0005
+[XY Model] Validation RMSE: 0.00169649 meters
+Epoch    41: reducing learning rate of group 0 to 2.5000e-04.
+[XY Model] Epoch [50/150], Train Loss: 0.00667847, Val Loss: 0.00314268, LR: 0.00025
+[XY Model] Validation RMSE: 0.00130099 meters
+[XY Model] Epoch [60/150], Train Loss: 0.00704616, Val Loss: 0.00313387, LR: 0.00025
+[XY Model] Validation RMSE: 0.00129792 meters
+Epoch    65: reducing learning rate of group 0 to 1.2500e-04.
+[XY Model] Epoch [70/150], Train Loss: 0.00667685, Val Loss: 0.00286949, LR: 0.000125
+[XY Model] Validation RMSE: 0.00124179 meters
+Epoch    77: reducing learning rate of group 0 to 6.2500e-05.
+[XY Model] Epoch [80/150], Train Loss: 0.00574439, Val Loss: 0.00277755, LR: 6.25e-05
+[XY Model] Validation RMSE: 0.00122865 meters
+[XY Model] Epoch [90/150], Train Loss: 0.00592071, Val Loss: 0.00261689, LR: 6.25e-05
+[XY Model] Validation RMSE: 0.00118909 meters
+Epoch    97: reducing learning rate of group 0 to 3.1250e-05.
+[XY Model] Epoch [100/150], Train Loss: 0.00570642, Val Loss: 0.00283569, LR: 3.125e-05
+[XY Model] Validation RMSE: 0.00124013 meters
+Epoch   103: reducing learning rate of group 0 to 1.5625e-05.
+[XY Model] Early stopping triggered at epoch 106
+[XY Model] Training completed in 35.03 seconds (0.58 minutes)
+
+=== Training Z Model ===
+[Z Model] Epoch [1/150], Train Loss: 0.43003920, Val Loss: 0.15974481, LR: 0.001
+[Z Model] Validation RMSE: 0.01179328 meters
+[Z Model] Epoch [10/150], Train Loss: 0.02943492, Val Loss: 0.00650002, LR: 0.001
+[Z Model] Validation RMSE: 0.00237891 meters
+[Z Model] Epoch [20/150], Train Loss: 0.01271499, Val Loss: 0.00496394, LR: 0.001
+[Z Model] Validation RMSE: 0.00207890 meters
+Epoch    28: reducing learning rate of group 0 to 5.0000e-04.
+[Z Model] Epoch [30/150], Train Loss: 0.00780126, Val Loss: 0.00342280, LR: 0.0005
+[Z Model] Validation RMSE: 0.00172628 meters
+Epoch    40: reducing learning rate of group 0 to 2.5000e-04.
+[Z Model] Epoch [40/150], Train Loss: 0.00685267, Val Loss: 0.00259968, LR: 0.0005
+[Z Model] Validation RMSE: 0.00150446 meters
+Epoch    46: reducing learning rate of group 0 to 1.2500e-04.
+[Z Model] Epoch [50/150], Train Loss: 0.00451484, Val Loss: 0.00259040, LR: 0.000125
+[Z Model] Validation RMSE: 0.00150178 meters
+Epoch    53: reducing learning rate of group 0 to 6.2500e-05.
+Epoch    59: reducing learning rate of group 0 to 3.1250e-05.
+[Z Model] Epoch [60/150], Train Loss: 0.00478762, Val Loss: 0.00253472, LR: 3.125e-05
+[Z Model] Validation RMSE: 0.00148555 meters
+[Z Model] Early stopping triggered at epoch 62
+[Z Model] Training completed in 19.19 seconds (0.32 minutes)
+Training history visualization saved to plots/training_history.png
+
+XY Model Test Set Evaluation:
+RMSE: δx=0.00123317, δy=0.00113291 meters
+MAE: δx=0.00093713, δy=0.00077743 meters
+R²: δx=0.9403, δy=0.9234
+
+Z Model Test Set Evaluation:
+RMSE: δz=0.00136481 meters
+MAE: δz=0.00098912 meters
+R²: δz=0.9672
+Prediction visualization saved to plots/xy_predictions.png
+Prediction visualization saved to plots/z_predictions.png
+Prediction visualization saved to plots/combined_predictions.png
+
+Models saved to 'models/xy_error_model.pth' and 'models/z_error_model.pth'

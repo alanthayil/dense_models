@@ -1,0 +1,36 @@
+XY model loaded successfully from models/xy_error_model.pth
+XY model metrics - RMSE: δx=0.00123317, δy=0.00113291
+Z model loaded successfully from models/z_error_model.pth
+Z model metrics - RMSE: δz=0.00136481
+Batch prediction time for 1000 samples: 51.94 ms
+Average single prediction time: 2.14 ms
+Predictions per second (single): 466.8
+
+Joint angles: [-2.7488104  -0.98641433  0.94081216  0.55258881 -1.63338568 -2.63111157]
+Joint torques: [-6.166765   67.74704643  9.61920817  1.92507566  3.87989329 -1.80596586]
+Predicted error: [-0.00201942 -0.00542581  0.00308637] meters
+Original error: [ 0.00338702  0.00295914 -0.00091588] meters
+Nominal position: [ 0.941128   -1.85795226  0.19612453] meters
+Compensated position: [ 0.94314742 -1.85252645  0.19303815] meters
+
+Batch compensation example:
+Sample 1:
+  Nominal: [0.813469, -1.895999, 0.087072]
+  Compensated: [0.816204, -1.889848, 0.083175]
+  Delta: [0.002735, 0.006151, -0.003897]
+Sample 2:
+  Nominal: [0.732330, -2.515816, 0.116364]
+  Compensated: [0.733279, -2.507552, 0.116210]
+  Delta: [0.000949, 0.008264, -0.000154]
+Sample 3:
+  Nominal: [0.776811, -1.821508, 0.197617]
+  Compensated: [0.778828, -1.813136, 0.196935]
+  Delta: [0.002017, 0.008372, -0.000683]
+Sample 4:
+  Nominal: [1.120926, -1.512681, -0.695929]
+  Compensated: [1.127300, -1.508298, -0.704066]
+  Delta: [0.006374, 0.004384, -0.008137]
+Sample 5:
+  Nominal: [0.766919, -2.183348, 0.105963]
+  Compensated: [0.766945, -2.177843, 0.095092]
+  Delta: [0.000026, 0.005505, -0.010871]
